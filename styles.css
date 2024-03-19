@@ -1,0 +1,38 @@
+
+.column-image {
+    width: 300px;
+}
+
+.headshot {
+    height: 350px;
+    border-radius: 250px;
+    align-self: center;
+}
+
+.column {
+    float: left;
+    width: 33.33%; /* Adjust this value according to your layout */
+    padding: 70px;
+    box-sizing: border-box;
+}
+
+.body {
+  font-family: Century gothic;
+  background-color: rgb(255, 255, 255);
+  color: rgb(67, 67, 67);
+}
+
+/* Clear floats after the columns */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.quote {
+    text-align: right; /* Align the text to the center */
+    font-size: 50px;
+    color: lightgrey;
+    font-family: 'Courier New', Courier, monospace;
+
+}

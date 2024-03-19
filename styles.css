@@ -36,3 +36,11 @@
     font-family: 'Courier New', Courier, monospace;
 
 }
+
+.button {
+    background-color: darkslategray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 30px;
+    color: white;
+    padding: 10px 20px;
+}

@@ -1,1 +1,0 @@
-# danieldeacon.github.io

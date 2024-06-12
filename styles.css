@@ -1,46 +1,277 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
 
-.column-image {
-    width: 300px;
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin: 20px;
+}
+
+.card {
+    flex: 1 1 calc(33.33% - 20px); 
+    margin: 10px;
+    perspective: 1000px;
+    cursor: pointer; 
+}
+
+.card-inner {
+    width: 100%;
+    height: auto;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.clicked .card-inner {
+    transform: rotateY(180deg); 
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 20px;
+    box-sizing: border-box; 
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover .card-front {
+    transform: scale(1.05);
+    transition: transform 0.3s ease; 
+}
+
+.card-front {
+    background-color: white;
+}
+
+.card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
 }
 
 .headshot {
-    height: 350px;
-    border-radius: 250px;
+    width: 20vw; 
+    max-width: 250px;
+    border-radius: 50%; 
     align-self: center;
+    object-fit: cover; 
 }
 
-.column {
-    float: left;
-    width: 33.33%; /* Adjust this value according to your layout */
-    padding: 70px;
+.story-card {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    perspective: 1000px;
+    cursor: pointer;
+    color: white;
+}
+
+.story-card .card-inner {
+    width: 100%;
+    height: auto;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.story-card.clicked .card-inner {
+    transform: rotateY(180deg);
+}
+
+.story-card .card-front{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 20px;
     box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(168, 0, 101);
 }
 
-.body {
-  font-family: Century gothic;
-  background-color: rgb(255, 255, 255);
-  color: rgb(67, 67, 67);
+.story-card .card-back {
+    background-color: darkcyan;
 }
 
-/* Clear floats after the columns */
-.container::after {
-    content: "";
-    clear: both;
-    display: table;
+.story-card .card-back {
+    transform: rotateY(180deg);
 }
 
-.quote {
-    text-align: right; /* Align the text to the center */
-    font-size: 50px;
-    color: lightgrey;
-    font-family: 'Courier New', Courier, monospace;
+.story-card:hover .card-front {
+    transform: scale(1.05);
+}
 
+#title {
+    font-size: 52px;
+    font-weight: normal;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: darkcyan;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+#quote {
+    font-size: 3.50vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #f0f0f0;
+    text-align: left;
+}
+
+#headings {
+    font-size: 6vw; /* 10% of the viewport width */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(168, 0, 101);
+    text-align: right;
+}
+
+#subheadings {
+    font-size: 6vw; /* 10% of the viewport width */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: darkcyan;
+    text-align: left;
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contact-item img {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.contact-item p,
+.contact-item a {
+    margin: 5px 0;
+}
+
+.column-image {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    display: block;
 }
 
 .button {
-    background-color: darkslategray;
+    background-color: rgb(168, 0, 101);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 30px;
     color: white;
     padding: 10px 20px;
 }
+
+.overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 139, 139, 0.7); 
+    backdrop-filter: blur(8px); 
+    z-index: 1;
+}
+
+.overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.479); 
+    z-index: 1;
+}
+
+
+.popup {
+    display: none;
+    color: #f0f0f0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: darkcyan;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.close {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#contacttext {
+    font-size: 36px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #f0f0f0;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+#popupButton {
+    animation: bounce 5s infinite; 
+    position:fixed;
+    top: 20px; 
+    right: 20px; 
+    margin: 10px;
+    width: 80px;
+    height: 80px; 
+    border-radius: 50%;
+    background-color: rgb(168, 0, 101);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+

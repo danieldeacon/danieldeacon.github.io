@@ -17,6 +17,7 @@ body {
     margin: 10px;
     perspective: 1000px;
     cursor: pointer; 
+
 }
 
 .card-inner {
@@ -44,6 +45,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-height: 800px;
+    min-height: 800px;
+    overflow-y: auto;
 }
 
 .card:hover .card-front {
@@ -78,7 +82,6 @@ p {
 
 .story-card {
     width: 100%;
-    max-width: 400px; 
     height: auto;
     perspective: 1000px;
     cursor: pointer;
@@ -99,8 +102,6 @@ p {
 
 .story-card .card-front{
     width: 100%;
-    min-height: 100%;
-    position: absolute;
     backface-visibility: hidden;
     padding: 20px;
     box-sizing: border-box;
@@ -200,18 +201,6 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 139, 139, 0.7); 
-    backdrop-filter: blur(8px); 
-    z-index: 1;
-}
-
-.overlay {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.479); 
     z-index: 1;
 }
@@ -274,4 +263,34 @@ p {
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .card, .story-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
 
+@media (max-width: 480px) {
+    .card .card-front, .card-back, .card-inner, .story-card {
+        flex: 1 1 100%;
+        position: inherit;
+        max-height: 500px;
+        min-height: 500px;
+    }
+
+    #title {
+        font-size: 36px;
+        margin-left: 10px;
+    }
+
+    #quote {
+        font-size: 6vw;
+    }
+
+    #headings, #subheadings {
+        font-size: 8vw;
+    }
+
+    #contacttext {
+        font-size: 24px;
+    }
+}

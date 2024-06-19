@@ -150,14 +150,14 @@ p {
 }
 
 #headings {
-    font-size: 6vw; /* 10% of the viewport width */
+    font-size: 6vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(168, 0, 101);
     text-align: right;
 }
 
 #subheadings {
-    font-size: 6vw; /* 10% of the viewport width */
+    font-size: 6vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: darkcyan;
     text-align: left;

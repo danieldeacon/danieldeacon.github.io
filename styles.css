@@ -149,14 +149,14 @@ p {
     text-align: left;
 }
 
-#headings {
+.headings {
     font-size: 6vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(168, 0, 101);
     text-align: right;
 }
 
-#subheadings {
+.subheadings {
     font-size: 6vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: darkcyan;

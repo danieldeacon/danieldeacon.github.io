@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    font-size: 1.25vw;
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
@@ -175,7 +176,7 @@ p {
 }
 
 .contact-item img {
-    width: 100%;
+    width: 40vw;
     max-width: 80px;
     height: auto;
     margin-bottom: 10px;
@@ -187,7 +188,7 @@ p {
 }
 
 .column-image {
-    width: 100%;
+    width: 40vw;
     max-width: 300px;
     margin: auto;
     display: block;
@@ -199,6 +200,7 @@ p {
     border-radius: 30px;
     color: white;
     padding: 10px 20px;
+    width: 100%;
 }
 
 .overlay {
